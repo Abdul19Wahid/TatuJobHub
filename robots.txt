@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /assets/private/
+Disallow: /*?*session=
+Disallow: /login
+Disallow: /register
+
+Sitemap: https://tatujobhub.xo.je/sitemap.xml

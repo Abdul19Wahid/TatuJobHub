@@ -1,0 +1,5 @@
+Options -Indexes
+
+# Route all missing pages through index.php (clean URL routing)
+# This works on InfinityFree without needing RewriteEngine at root level
+ErrorDocument 404 /index.php

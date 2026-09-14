@@ -1,0 +1,53 @@
+/* autocomplete.css — styling for the job search suggestion dropdown */
+
+.suggest-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.suggest-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #212529;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.15s ease;
+}
+
+.suggest-item:hover,
+.suggest-item.active {
+    background-color: #f1f3f5;
+}
+
+.suggest-icon {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Dark mode support (matches your existing dark mode toggle) */
+body.dark-mode .suggest-box {
+    background: #1e1e2f;
+    border-color: #33334d;
+}
+
+body.dark-mode .suggest-item {
+    color: #e0e0e0;
+}
+
+body.dark-mode .suggest-item:hover,
+body.dark-mode .suggest-item.active {
+    background-color: #2a2a40;
+}

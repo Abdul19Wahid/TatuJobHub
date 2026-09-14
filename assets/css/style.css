@@ -1,0 +1,270 @@
+:root{--primary:#1A56DB;--primary-dark:#1347c8;--primary-light:#EBF5FF;--dark:#111827;--muted:#6B7280;--border:#E5E7EB;--bg:#F9FAFB;--radius:10px;--shadow:0 4px 16px rgba(0,0,0,.08);}
+body{font-family:'DM Sans',sans-serif;font-size:15px;color:var(--dark);background:#fff;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,h5,h6,.navbar-brand,.fw-700,.fw-800{font-family:'Plus Jakarta Sans',sans-serif;}
+.fw-700{font-weight:700!important}.fw-800{font-weight:800!important}.fw-600{font-weight:600!important}
+.navbar-brand{font-size:1.25rem;font-weight:800;letter-spacing:-.5px;}
+.nav-link{font-weight:500;color:#374151!important;border-radius:6px;padding:6px 12px!important;transition:.2s;}
+.nav-link:hover,.nav-link.active{background:var(--primary-light);color:var(--primary)!important;}
+.btn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;border-radius:var(--radius);transition:all .2s;}
+.btn-primary{background:var(--primary);border-color:var(--primary);}
+.btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(26,86,219,.35);}
+.btn-outline-primary{color:var(--primary);border-color:var(--primary);}
+.btn-outline-primary:hover{background:var(--primary);color:#fff;}
+.btn-lg{padding:14px 28px;font-size:16px;border-radius:12px;}
+.card{border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.08);}
+.form-control,.form-select{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14.5px;transition:.2s;}
+.form-control:focus,.form-select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,86,219,.12);}
+.form-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:13.5px;color:#374151;margin-bottom:6px;}
+.input-group-text{background:var(--bg);border:1.5px solid var(--border);color:var(--muted);}
+.auth-page{min-height:calc(100vh - 66px);background:linear-gradient(135deg,#EBF5FF 0%,#F9FAFB 50%,#EDE9FE 100%);display:flex;align-items:center;}
+.auth-card{background:#fff;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.12);border:1px solid rgba(255,255,255,.8);padding:2.5rem;}
+.auth-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem;color:var(--primary);text-decoration:none;}
+.auth-divider{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px;}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.password-toggle{cursor:pointer;background:var(--bg);border:1.5px solid var(--border);border-left:none;color:var(--muted);padding:0 12px;transition:.2s;}
+.password-toggle:hover{color:var(--primary);}
+.role-card{border:2px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all .2s;text-align:center;background:#fff;}
+.role-card:hover,.role-card.selected{border-color:var(--primary);background:var(--primary-light);}
+.role-card.selected{box-shadow:0 0 0 3px rgba(26,86,219,.15);}
+.role-icon{font-size:2rem;margin-bottom:8px;display:block;}
+.flash-messages .alert{border:none;border-radius:12px;font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+.section-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2rem;letter-spacing:-.5px;}
+.text-primary{color:var(--primary)!important}.bg-primary{background:var(--primary)!important}
+
+/* ── Dashboard layout ────────────────────────────────────────── */
+.dashboard-wrapper{display:flex;min-height:100vh;}
+.sidebar{width:260px;background:#111827;flex-shrink:0;padding:0;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;}
+.sidebar-logo{padding:20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px;}
+.sidebar-logo a{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;text-decoration:none;}
+.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:10px 20px;color:rgba(255,255,255,.55);text-decoration:none;font-weight:500;font-size:14px;transition:.2s;border-left:3px solid transparent;}
+.sidebar-nav a i{font-size:1rem;width:18px;flex-shrink:0;}
+.sidebar-nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.sidebar-nav a.active{color:#fff;background:rgba(26,86,219,.3);border-left-color:#1A56DB;}
+.sidebar-section{padding:12px 20px 4px;font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.25);text-transform:uppercase;}
+.dashboard-content{flex:1;background:#F9FAFB;padding:32px;min-width:0;}
+@media(max-width:991px){.sidebar{display:none!important;}.dashboard-content{padding:16px;}}
+
+/* ── Stat cards ────────────────────────────────────────────────── */
+.stat-card{border-radius:14px;padding:20px;border:none;}
+.stat-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.stat-value{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;line-height:1;}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;}
+
+/* ── Job / Company cards ────────────────────────────────────────── */
+.job-card{border-left:3px solid transparent;transition:.2s;}
+.job-card:hover{border-left-color:var(--primary);box-shadow:0 4px 20px rgba(0,0,0,.1);}
+.company-logo{width:48px;height:48px;border-radius:10px;object-fit:contain;border:1px solid var(--border);padding:4px;background:#fff;}
+.logo-placeholder{width:48px;height:48px;border-radius:10px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:18px;flex-shrink:0;}
+
+/* ── Misc ────────────────────────────────────────────────────────── */
+.min-w-0{min-width:0;}
+.avatar{border-radius:50%;object-fit:cover;border:2px solid var(--border);}
+.page-link{border-radius:8px!important;margin:0 2px;color:var(--primary);font-weight:600;font-size:14px;}
+.page-item.active .page-link{background:var(--primary);border-color:var(--primary);}
+
+/* ============================================================
+   FEATURE 8 — Mobile UI Polish + New Feature Styles
+   ============================================================ */
+
+/* ── Responsive typography ───────────────────────────────── */
+@media (max-width: 576px) {
+    .section-title, .h4 { font-size: 1.2rem !important; }
+    .display-4          { font-size: 2rem   !important; }
+    .btn-lg             { padding: 11px 20px; font-size: 15px; }
+    .auth-card          { padding: 1.5rem; border-radius: 14px; }
+    .dashboard-content  { padding: 14px; }
+    .card-body.p-4      { padding: 1rem !important; }
+    .stat-card          { padding: 14px; }
+    .stat-value         { font-size: 1.5rem; }
+}
+
+/* ── Mobile sidebar overlay ──────────────────────────────── */
+@media (max-width: 991px) {
+    .mobile-menu-open .sidebar {
+        display: flex !important;
+        position: fixed;
+        top: 0; left: 0;
+        height: 100vh;
+        width: 260px;
+        z-index: 1050;
+        animation: slideInLeft .25s ease;
+    }
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 1049;
+    }
+    .mobile-menu-open .sidebar-overlay { display: block; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+}
+
+/* ── Bottom navigation bar (mobile) ─────────────────────── */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    z-index: 1000;
+    padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+    box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+}
+.bottom-nav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 4px;
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: color .2s;
+    border-radius: 8px;
+    margin: 0 3px;
+}
+.bottom-nav a i  { font-size: 1.3rem; }
+.bottom-nav a.active,
+.bottom-nav a:hover { color: var(--primary); }
+.bottom-nav a.active i { transform: scale(1.1); }
+@media (max-width: 768px) {
+    .bottom-nav { display: flex; }
+    /* push page content above bottom nav */
+    main, .dashboard-content { padding-bottom: 80px; }
+}
+
+/* ── Hero search bar on mobile ───────────────────────────── */
+@media (max-width: 576px) {
+    .search-wrap { flex-direction: column; gap: 0 !important; border-radius: 12px; }
+    .search-wrap input { border-bottom: 1px solid #e5e7eb; border-radius: 0; }
+    .search-wrap .btn  { border-radius: 0 0 10px 10px; }
+}
+
+/* ── Job cards on mobile ─────────────────────────────────── */
+@media (max-width: 576px) {
+    .job-card .card-body { padding: 14px !important; }
+    .logo-placeholder    { width: 40px !important; height: 40px !important;
+                           font-size: 15px !important; border-radius: 8px !important; }
+}
+
+/* ── Tables on mobile ────────────────────────────────────── */
+@media (max-width: 768px) {
+    .table-responsive-stack td,
+    .table-responsive-stack th { display: block; width: 100%; }
+    .table-responsive-stack thead { display: none; }
+    .table-responsive-stack td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        font-size: 11px;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        display: block;
+        margin-bottom: 2px;
+    }
+}
+
+/* ── Modal improvements on mobile ───────────────────────── */
+@media (max-width: 576px) {
+    .modal-dialog { margin: 0; align-items: flex-end; }
+    .modal.show .modal-dialog { transform: none; }
+    .modal-content {
+        border-radius: 20px 20px 0 0 !important;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* ── Stat pills for mobile homepage ─────────────────────── */
+@media (max-width: 480px) {
+    .stat-item .num { font-size: 1.4rem; }
+    .stat-item .lbl { font-size: 11px; }
+}
+
+/* ── Forms on mobile ─────────────────────────────────────── */
+@media (max-width: 576px) {
+    .form-control, .form-select { font-size: 16px; } /* Prevents iOS zoom on focus */
+}
+
+/* ── Navbar improvements ─────────────────────────────────── */
+@media (max-width: 991px) {
+    .navbar .btn { padding: 6px 12px; font-size: 13px; }
+}
+
+/* ── Dashboard sidebar toggle button ─────────────────────── */
+.sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: #374151;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+@media (max-width: 991px) {
+    .sidebar-toggle { display: inline-flex; align-items: center; }
+}
+
+/* ── Notification badge ──────────────────────────────────── */
+.notif-dot {
+    width: 8px; height: 8px;
+    background: #dc2626;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 4px; right: 4px;
+}
+
+/* ── Page loading indicator ──────────────────────────────── */
+#pageLoader {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1A56DB, #93c5fd, #1A56DB);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+    z-index: 9999;
+    display: none;
+}
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ── Card hover animations ───────────────────────────────── */
+.card-hover { transition: transform .2s, box-shadow .2s; }
+.card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0,0,0,.12) !important;
+}
+
+/* ── Smooth scroll ───────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+/* ── Focus visible outline ───────────────────────────────── */
+:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ── Toast notification position on mobile ───────────────── */
+@media (max-width: 576px) {
+    #toastContainer {
+        bottom: 80px !important; /* above bottom nav */
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+    }
+}
+
+/* ── Account settings switches ──────────────────────────── */
+.form-check-input:checked { background-color: var(--primary); border-color: var(--primary); }
